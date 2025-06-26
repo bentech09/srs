@@ -1,5 +1,8 @@
 <?php
-
+  /*echo "<pre>";
+  var_dump($adapter);
+  echo "</pre>";*/
+  
   /* parse settings */
     $configPath = __DIR__ . '\settings.ini';
     if (!file_exists($configPath)) {
