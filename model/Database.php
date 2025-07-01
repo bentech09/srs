@@ -1,11 +1,11 @@
 <?php
-    require_once __DIR__ . '/DatabaseConnectionInterface.php';
+    require_once __DIR__ . '/DatabaseHandlerInterface.php';
 
     /** @package  */
-    class Database { 
-        private DatabaseConnectionInterface $connection;
+    class database { 
+        private databaseHandlerInterface $connection;
 
-        public function __construct(DatabaseConnectionInterface $connection) {
+        public function __construct(databaseHandlerInterface $connection) {
                 $this->connection = $connection;
         }
 

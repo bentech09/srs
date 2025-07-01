@@ -1,7 +1,6 @@
 <?php
-  /*echo "<pre>";
-  var_dump($adapter);
-  echo "</pre>";*/
+
+  require_once __DIR__ . '/../bootstrap/bootstrap.php';
   
   /* parse settings */
     $configPath = __DIR__ . '\settings.ini';
@@ -14,7 +13,4 @@
       die("Cannot read: settings.ini");
     }
   /* parse settings */
-
-  session_start();
-
 ?>

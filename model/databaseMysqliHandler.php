@@ -1,8 +1,8 @@
 <?php
-    require_once __DIR__ . '/DatabaseConnectionInterface.php';
+    require_once __DIR__ . '/databaseHandlerInterface.php';
 
     /** @package  */
-    class MysqliAdapter implements DatabaseConnectionInterface { 
+    class databaseMysqliHandler implements databaseHandlerInterface { 
         private static ?self $instance = null;
         private mysqli $conn;
 

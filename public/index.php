@@ -3,10 +3,9 @@
   require_once __DIR__ . '/../model/Database.php';
   require_once __DIR__ . '/../model/MysqliAdapter.php';
 
-  $adapter = MysqliAdapter::getInstance($config);
-  $database = new Database($adapter);
+  $mysqliHandler = databaseMysqliHandler::getInstance($config);
+  $database = new database($mysqliHandler);
   $conn = $database->getConnection();
-
   
 ?>
 <!DOCTYPE HTML> 

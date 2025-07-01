@@ -1,5 +1,5 @@
 <?php
-    interface DatabaseConnectionInterface {
+    interface databaseHandlerInterface {
         public function getConnection(): object;
     }
 ?>
