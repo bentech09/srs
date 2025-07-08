@@ -5,7 +5,7 @@
     class database { 
         private databaseHandlerInterface $connection;
 
-        public function __construct(databaseHandlerInterface $connection) {
+        public function __construct(databaseHandlerInterface $connection) { //import database handler
                 $this->connection = $connection;
         }
 

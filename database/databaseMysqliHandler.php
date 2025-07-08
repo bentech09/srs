@@ -22,7 +22,7 @@
                 $this->conn->set_charset("utf8mb4"); 
         }
 
-        public static function getInstance(array $config): self {
+        public static function getInstance(array $config): self { //singleton
             if (self::$instance == null) {
                 self::$instance = new self($config);
             }

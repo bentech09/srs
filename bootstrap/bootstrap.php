@@ -1,4 +1,5 @@
 <?php
+  //require_once __DIR__ . '/../router/router.php';
   require_once __DIR__ . '/../error/getError.php';
 
   $errorHandle = new errorHandler();
