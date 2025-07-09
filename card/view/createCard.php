@@ -9,8 +9,7 @@
 
   <BODY>
     <h1>Create a card</h1>
-    <form action="<?php echo $_SERVER['PHP_SELF']; ?>?page=submitcreatecard" method="post">
-      <input type="hidden" name="page" vamue="submitcreatecard">
+    <form action="<?php echo $_SERVER['PHP_SELF']; ?>?page=createcard" method="post">
       <label>Question: <input type="text" name="question"></label><p>
       <label>Answer: <input type="text" name="answer"></label><p>
       <input type="submit" value="Create Card">

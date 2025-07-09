@@ -1,8 +1,8 @@
 <?php
   $routes = [
     'home' => '/../public/index.php',
-    'createcard' => '/../view/createCardView.php',
-    'submitcreatecard' => '/../controller/createCardcontroller.php',
+    'cardcreation' => '/../card/view/createCard.php',
+    'createcard' => '/../card/cardcontroller.php',
   ];
 
   $page = $_GET['page'] ?? 'home';
@@ -10,9 +10,9 @@
   if (array_key_exists($page, $routes)) {
     require_once __DIR__ . '/' . $routes[$page];
 
-    if ($page === 'submitcreatecard') {
-      $controller = $container->get('createCardController');
-      $controller->submitCreateCard();
+    if ($page === 'createcard') {
+      $controller = $container->get('cardController');
+      $controller->createCard();
     }
 
   } else {

@@ -1,14 +1,14 @@
 <?php
     /** @package  */
-    class createCardService {
-        private createCardRepo $createCardRepo;
+    class cardService {
+        private cardRepository $cardRepository;
 
-        public function __construct(createCardRepo $createCardRepo) {
-            $this->createCardRepo = $createCardRepo;
+        public function __construct(cardRepository $cardRepository) {
+            $this->cardRepository = $cardRepository;
         }
 
         public function createCard($data) {
-            $this->createCardRepo->createCard($data);
+            $this->cardRepository->createCard($data);
         }
 
 

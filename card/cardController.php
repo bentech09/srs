@@ -1,14 +1,14 @@
 <?php
 
-    class createCardController {
+    class cardController {
 
-        private createCardService $createCardService;
+        private cardService $cardService;
 
-        public function __construct(createCardService $createCardService) {
-            $this->createCardService = $createCardService;
+        public function __construct(cardService $cardService) {
+            $this->cardService = $cardService;
         }
         
-        public function submitCreateCard() {
+        public function createCard() {
             $data = [
                 'question' => [''],
                 'answer'   => [''],
@@ -26,7 +26,7 @@
                     'answer'   => $_POST['answer'] ?? '',
                     ];
 
-                return $this->createCardService->createCard($data);
+                return $this->cardService->createCard($data);
             }
         }
     }

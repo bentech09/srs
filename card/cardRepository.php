@@ -1,5 +1,5 @@
 <?php
-    class createCardRepo {
+    class cardRepository {
 
         private query $query;
         public function __construct(query $query) {

@@ -12,7 +12,7 @@
       </HEAD>
       <BODY>
         <h1>Homepage</h1>
-        <a href="index.php?page=createcard"> Create Card </a>
+        <a href="index.php?page=cardcreation"> Create Card </a>
       </BODY>
     </HTML>
     <?php
