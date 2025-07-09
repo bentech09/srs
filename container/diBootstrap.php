@@ -6,6 +6,8 @@
     require_once __DIR__ . '/../card/cardRepository.php';
     require_once __DIR__ . '/../card/cardService.php';
     require_once __DIR__ . '/../card/cardController.php';
+    require_once __DIR__ . '/../validate/createCardValidate/createCardFormValidator.php';
+
     
     $container = new diContainer();
 
@@ -24,11 +26,15 @@
     });
 
     $container->set('cardService', function() use ($container) {
-        return new cardService($container->get('cardRepository'));
+        return new cardService($container->get('cardRepository'), $container->get('createCardValidatorInterface'));
     });
 
     $container->set('cardController', function() use ($container) {
       return new cardController($container->get('cardService'));
+    });
+
+    $container->set('createCardValidatorInterface', function() use ($container) {
+      return new createCardFormValidator();
     });
 
 

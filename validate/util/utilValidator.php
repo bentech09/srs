@@ -7,7 +7,7 @@
 
             $data = preg_match($pattern, $data);
             if ($data !== 1) {
-                return $error[] =  ['Input can\'t be empty.'];
+                return $error = 'Input can\'t be empty.';
             }
 
             return true;

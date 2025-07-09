@@ -2,28 +2,25 @@
 
 require_once __DIR__ . "/createCardValidatorInterface.php";
 require_once __DIR__ . "/createCardQuestionValidator.php";
-require_once __DIR__ . "/createCardAnswerValidator";
+require_once __DIR__ . "/createCardAnswerValidator.php";
 
     Class createCardFormValidator implements createCardValidatorInterface {
 
-        public static function validate(mixed $data): bool|array {
+        public static function validate(mixed $data): bool|string {
             $error = [];
-
-            $dataQuestion = createCardQuestionValidator::validate($data['question']);
-            if($dataQuestion !== true) {
-                $error[''] =  $dataQuestion;
-            }
 
             $dataAnswer = createCardAnswerValidator::validate($data['answer']);
             if($dataAnswer !== true) {
-                $error[''] = $dataAnswer;
+                $error = $dataAnswer;
+            }
+
+            $dataQuestion = createCardQuestionValidator::validate($data['question']);
+            if($dataQuestion !== true) {
+                $error =  $dataQuestion;
             }
 
             if (!empty($error)) {
-                return [
-                    'formError' => 'There were errors in the form. Please review and correct them.',
-                    'fields' => $error
-                ];
+                return $error;
             }
 
             return true;

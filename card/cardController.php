@@ -26,7 +26,12 @@
                     'answer'   => $_POST['answer'] ?? '',
                     ];
 
-                return $this->cardService->createCard($data);
+                try { 
+                    return $this->cardService->createCard($data);
+                } catch(InvalidArgumentException $e) {
+                    echo $e->getMessage();
+                 }
+                return;
             }
         }
     }
