@@ -1,7 +1,4 @@
 <?php
-
-  require_once __DIR__ . '/../bootstrap/bootstrap.php';
-  
   /* parse settings */
     $configPath = __DIR__ . '\settings.ini';
     if (!file_exists($configPath)) {
