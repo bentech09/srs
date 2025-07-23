@@ -1,15 +1,17 @@
-<!DOCTYPE HTML> 
+<!DOCTYPE HTML>
 <HTML LANG="EN">
- <HEAD>
-    <META CHARSET="UTF-8"> 
-    <TITLE>Edit Card</TITLE>
-    <LINK REL="STYLESHEET" HREF="css/default.css">
-  </HEAD>
-  <BODY>
-    <?php
-        $id = htmlspecialchars($_GET['id']);
-        $page="index.php?page=updatecard";
-        $html .= <<<HTML
+
+<HEAD>
+  <META CHARSET="UTF-8">
+  <TITLE>Edit Card</TITLE>
+  <LINK REL="STYLESHEET" HREF="css/default.css">
+</HEAD>
+
+<BODY>
+  <?php
+  $id = htmlspecialchars($_GET['id']);
+  $page = "index.php?page=updatecard";
+  $html .= <<<HTML
         <!-- Edit Form -->
         <div class="card-form">
           <div class="form-header">
@@ -32,7 +34,8 @@
         </div>
       HTML;
 
-      echo $html;
-    ?>
-  </BODY>
+  echo $html;
+  ?>
+</BODY>
+
 </HTML>

@@ -1,20 +1,22 @@
-<!DOCTYPE HTML> 
+<!DOCTYPE HTML>
 <HTML LANG="EN">
- <HEAD>
-    <META CHARSET="UTF-8"> 
-    <TITLE>All Cards</TITLE>
-    <LINK REL="STYLESHEET" HREF="css/default.css">
-  </HEAD>
-  <BODY>
-    <h1>All Cards</h1>
-    <?php
-      $number = 1;
-      foreach ($data as $param) {
-        $question = htmlspecialchars($param["question"]);
-        $answer = htmlspecialchars($param["answer"]);
-        $id = htmlspecialchars($param["id"]);
 
-        $html .= <<<HTML
+<HEAD>
+  <META CHARSET="UTF-8">
+  <TITLE>All Cards</TITLE>
+  <LINK REL="STYLESHEET" HREF="css/default.css">
+</HEAD>
+
+<BODY>
+  <h1>All Cards</h1>
+  <?php
+  $number = 1;
+  foreach ($data as $param) {
+    $question = htmlspecialchars($param["question"]);
+    $answer = htmlspecialchars($param["answer"]);
+    $id = htmlspecialchars($param["id"]);
+
+    $html .= <<<HTML
         <!-- Cards -->
         <div class="card">
           <div class="question">
@@ -30,10 +32,11 @@
         </div>
         HTML;
 
-        $number = $number + 1;
-      }
+    $number = $number + 1;
+  }
 
-      echo $html;
-    ?>
-  </BODY>
+  echo $html;
+  ?>
+</BODY>
+
 </HTML>
