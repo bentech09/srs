@@ -25,7 +25,7 @@ class cardRepository
      * @return array  
      * SELECT is used to retrieve rows selected from one or more tables.
      * * to select all columns from all tables in the FROM clause.
-    */
+     */
     public function listAllCards(): array
     {
         return $this->query->execute("SELECT * FROM cards");
@@ -42,5 +42,15 @@ class cardRepository
     public function updateCard($data): bool
     {
         return $this->query->execute("UPDATE cards SET question = ?,  answer = ? WHERE id = ?", [$data['question'], $data['answer'], $data['id']]);
+    }
+
+    /**
+     * @param mixed $data 
+     * @return bool 
+     * For the single-table syntax, the DELETE statement deletes rows from tbl_name and returns a count of the number of deleted rows.
+     */
+    public function deleteCard($id): bool
+    {
+        return $this->query->execute("DELETE FROM cards WHERE id = ?", [$id['id']]);
     }
 }

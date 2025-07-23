@@ -27,7 +27,7 @@
           </div>
           <div class="card-actions">
             <a href="index.php?page=editcard&id={$id}" class="btn-icon" title="Edit">✏️</a>
-            <a href="index.php?page=editCard&id={$id}" class="btn-icon" title="Delete">🗑️</a>
+            <a href="index.php?page=deletecard&id={$id}" class="btn-icon" title="Delete">🗑️</a>
           </div>
         </div>
         HTML;

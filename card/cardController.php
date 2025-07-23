@@ -29,7 +29,8 @@ class cardController
             ];
 
             try {
-                return $this->cardService->createCard($data);
+                $this->cardService->createCard($data);
+                header("Location: index.php?page=listallcards");
             } catch (InvalidArgumentException $e) {
                 echo $e->getMessage();
             }
@@ -63,10 +64,33 @@ class cardController
             ];
 
             try {
-                return $this->cardService->updateCard($data);
+                $this->cardService->updateCard($data);
+                header("Location: index.php?page=listallcards");
             } catch (InvalidArgumentException $e) {
                 echo $e->getMessage();
             }
+            return;
+        }
+    }
+
+    public function deleteCard()
+    {
+        $id = [
+            null => null,
+        ];
+
+        if ($_SERVER['REQUEST_METHOD'] === 'GET') {
+            $id = [
+                'id' => $_GET['id'],
+            ];
+
+            try {
+                $this->cardService->deleteCard($id);
+                header("Location: index.php?page=listallcards");
+            } catch (InvalidArgumentException $e) {
+                echo $e->getMessage();
+            }
+
             return;
         }
     }

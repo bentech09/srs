@@ -37,4 +37,9 @@ class cardService
         $this->validateCard($data);
         $this->cardRepository->updateCard($data);
     }
+
+    public function deleteCard($id)
+    {
+        $this->cardRepository->deleteCard($id);
+    }
 }

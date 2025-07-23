@@ -6,6 +6,7 @@ $routes = [
   'listallcards' => '/../card/cardcontroller.php',
   'editcard' => '/../card/view/editCard.php',
   'updatecard' => '/../card/cardcontroller.php',
+  'deletecard' => '/../card/cardcontroller.php',
 ];
 
 $page = $_GET['page'] ?? 'home';
@@ -26,6 +27,11 @@ if (array_key_exists($page, $routes)) {
   if ($page === 'updatecard') {
     $controller = $container->get('cardController');
     $controller->updateCard();
+  }
+
+  if ($page === 'deletecard') {
+    $controller = $container->get('cardController');
+    $controller->deleteCard();
   }
 } else {
   http_response_code(404);
