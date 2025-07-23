@@ -8,11 +8,12 @@
       <HEAD>
           <META CHARSET="UTF-8">
           <TITLE>Homepage</TITLE>
-          <LINK REL="STYLESHEET" HREF="default.css">
+          <LINK REL="STYLESHEET" HREF="css/default.css">
       </HEAD>
       <BODY>
         <h1>Homepage</h1>
-        <a href="index.php?page=cardcreation"> Create Card </a>
+        <p><a href="index.php?page=cardcreation"> Create Card </a></p>
+        <p><a href="index.php?page=listallcards"> List All Cards </a></p>
       </BODY>
     </HTML>
     <?php

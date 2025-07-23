@@ -13,7 +13,6 @@
             $result = $this->createCardValidatorInterface->validate($data);
 
             if ($result !== true) {
-                //var_dump($result);
                 throw new InvalidArgumentException($result);
             } 
         }
@@ -21,6 +20,15 @@
         public function createCard($data) {
             $this->validateCard($data);
             $this->cardRepository->createCard($data);
+        }
+
+        public function listAllCards(): array{
+            return $this->cardRepository->ListAllCards();
+        }
+
+        public function updateCard($data) {
+            $this->validateCard($data);
+            $this->cardRepository->updateCard($data);
         }
     }
 ?>         

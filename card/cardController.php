@@ -34,6 +34,38 @@
                 return;
             }
         }
+
+        public function listAllCards() {
+            if ($_SERVER['REQUEST_METHOD'] === 'GET') {
+                $data = $this->cardService->listAllCards();
+                require_once __DIR__ . '/view/listAllCards.php';
+                return;
+            }
+            return;
+        } 
+
+        public function updateCard() {
+            $data = [
+                'question' => [''],
+                'answer'   => [''],
+                'id'       => [''],
+            ];
+            
+            if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+                $data = [
+                  'question' => $_POST['question'] ?? '',
+                  'answer'   => $_POST['answer'] ?? '',
+                  'id'       => $_POST['id'] ?? '',
+                  ];
+
+                try { 
+                   return $this->cardService->updateCard($data);
+                } catch(InvalidArgumentException $e) {
+                    echo $e->getMessage();
+                   }
+            return;
+            }
+        }
     }
 ?>
 
