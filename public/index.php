@@ -16,9 +16,12 @@ if (empty($page) || $page === 'home') { ?>
     <h1>Homepage</h1>
     <p><a href="index.php?page=cardcreation"> Create Card </a></p>
     <p><a href="index.php?page=listallcards"> List All Cards </a></p>
+
+    <h2>test section</h2>
+
   </BODY>
 
   </HTML>
 <?php
-}
+} 
 ?>

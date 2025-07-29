@@ -37,3 +37,4 @@ class databaseMysqliHandler implements databaseHandlerInterface
         return $this->conn;
     }
 }
+?>
