@@ -6,7 +6,10 @@ require_once __DIR__ . '/../query/query.php';
 require_once __DIR__ . '/../card/cardRepository.php';
 require_once __DIR__ . '/../card/cardService.php';
 require_once __DIR__ . '/../card/cardController.php';
-require_once __DIR__ . '/../validate/createCardValidate/createCardFormValidator.php';
+require_once __DIR__ . '/../card/validate/cardFormValidator.php';
+require_once __DIR__ . '/../user/userController.php';
+require_once __DIR__ . '/../user/userService.php';
+require_once __DIR__ . '/../user/userRepository.php';
 
 
 $container = new diContainer();
@@ -21,6 +24,8 @@ $container->set('query', function () use ($container) {
   return new query($queryMysqliHandler);
 });
 
+
+//CARD CREATION
 $container->set('cardRepository', function () use ($container) {
   return new cardRepository($container->get('query'));
 });
@@ -36,3 +41,17 @@ $container->set('cardController', function () use ($container) {
 $container->set('createCardValidatorInterface', function () use ($container) {
   return new createCardFormValidator();
 });
+
+//USER CREATION
+$container->set('userController', function () use ($container) {
+  return new userController($container->get('userService'));
+});
+
+$container->set('userService', function () use ($container) {
+  return new userService($container->get('userRepository'));
+});
+
+$container->set('userRepository', function () use ($container) {
+  return new userRepository($container->get('query'));
+});
+

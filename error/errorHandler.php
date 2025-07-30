@@ -7,7 +7,12 @@ class errorHandler implements errorHandlerInterface
 
     public function Exception(Throwable $exception): void
     {
-        error_log($exception->getMessage());
+        if ($exception->getCode() === 1) {
+            error_log($exception->getMessage());
+            echo $exception->getMessage();
+        } else {
+            error_log($exception->getMessage());
+        }
         //echo "triggered exception\n"; //new mysqli("localhost", "fault", "fault", "fault_db");
         return;
     }

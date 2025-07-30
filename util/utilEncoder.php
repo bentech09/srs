@@ -7,7 +7,7 @@ class utilEncoder
         $error = [];
 
         if (!mb_check_encoding($data, 'UTF-8')) {
-            return $error[] = ['Data is not in the right encoding format (UTF8)'];
+            throw new Exception("Data is not in the right encoding format (UTF8)", 1);
         }
 
         return true;

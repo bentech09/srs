@@ -9,7 +9,7 @@ class utilValidator
 
         $data = preg_match($pattern, $data);
         if ($data !== 1) {
-            return $error = 'Input can\'t be empty.';
+            throw new Exception("Input cannot be empty.", 1);
         }
 
         return true;
@@ -22,7 +22,7 @@ class utilValidator
 
         $data = preg_match($pattern, $data);
         if ($data !== 1) {
-            return $error[] =  ["Input can only be between {$minLength} and {$maxLength} characters."];
+            throw new Exception("Input can only be between {$minLength} and {$maxLength} characters.", 1);
         }
 
         return true;
@@ -33,7 +33,7 @@ class utilValidator
         $error = [];
 
         if (!is_string($data)) {
-            return $error[] = ['Only strings allowed.'];
+            throw new Exception("Only strings allowed.", 1);
         }
 
         return true;

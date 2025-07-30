@@ -28,12 +28,9 @@ class cardController
                 'answer'   => $_POST['answer'] ?? '',
             ];
 
-            try {
-                $this->cardService->createCard($data);
-                header("Location: index.php?page=listallcards");
-            } catch (InvalidArgumentException $e) {
-                echo $e->getMessage();
-            }
+            $this->cardService->createCard($data);
+            header("Location: index.php?page=listallcards");
+
             return;
         }
     }
@@ -45,6 +42,7 @@ class cardController
             require_once __DIR__ . '/view/listAllCards.php';
             return;
         }
+
         return;
     }
 
@@ -63,12 +61,9 @@ class cardController
                 'id'       => $_POST['id'] ?? '',
             ];
 
-            try {
-                $this->cardService->updateCard($data);
-                header("Location: index.php?page=listallcards");
-            } catch (InvalidArgumentException $e) {
-                echo $e->getMessage();
-            }
+            $this->cardService->updateCard($data);
+            header("Location: index.php?page=listallcards");
+
             return;
         }
     }
@@ -83,13 +78,8 @@ class cardController
             $id = [
                 'id' => $_GET['id'],
             ];
-
-            try {
-                $this->cardService->deleteCard($id);
-                header("Location: index.php?page=listallcards");
-            } catch (InvalidArgumentException $e) {
-                echo $e->getMessage();
-            }
+            $this->cardService->deleteCard($id);
+            header("Location: index.php?page=listallcards");
 
             return;
         }
